@@ -1,0 +1,40 @@
+<!-- EXERCÍCIO 3 -->
+<?php
+class produto{
+  public $nome;
+  public $pc;
+  public $qtd;
+  public $desct;
+  public $pagament;
+public function produto($n,$pc,$qtd){
+$this->nome = $n;
+$this->pc = $pc;
+$this->qtd = $qtd;
+$this->pagament = $this->pc * $this->qtd;
+    if($this->qtd >=11 and $this->qtd <=20){
+$this->desct= "10%";
+$desct=($this->pagament*10)/100;
+$this->pagament = $this->pagament - $desc;
+    }
+    elseif($this->qtd >=21 and $this->qtd<=50){
+$this->desct= "20%";
+$desct=($this->pagament*20)/100;
+$this->pagament = $this->pagament - $desct;
+    }
+    elseif($this->qtd >50){
+$this->desct= "25%";
+$desct=($this->pagament*25)/100;
+$this->pagament = $this->pagament - $desct;
+    }
+    else{
+$this->desct = 0;
+    }
+}
+}
+$pp= new produto("coca",7.99,17);
+print_r($pp);
+$ps= new produto("pizza cong",11.50,48);
+print_r($ps);
+$pt= new produto("chocolate",6.00,76);
+print_r($pt);
+?>
