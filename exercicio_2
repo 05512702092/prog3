@@ -1,0 +1,67 @@
+<!-- EXERCÍCIO 2 -->
+<?php
+class Empregados{
+ 	 public $anome;
+  public $bnome;
+  	public $salm;
+ 	 public $sala;
+
+  public function __construct(){
+  $this-> anome = "Matheus";
+  $this-> bnome = "Ferreira Rauber";
+  $this-> salm = 5000.00;
+  }
+  public function setAnome($recebe){
+  return $this->anome = $recebe;
+  }
+  public function getAnome(){
+  return $this ->anome;
+  }
+  public function setBnome($recebe1){
+  return $this->bnome = $recebe1;
+  }
+ 	public function getBnome(){
+  return $this ->bnome;
+  }
+ 	public function setSalm($recebe2){
+  return $this->salm = $recebe2;
+  }
+ 	public function getSalm(){
+ 	return $this ->salm;
+  }
+  public function setSala(){  
+  return $this->sala = $this->salm*12;
+  }
+  public function getSala(){
+  return $this ->sala;
+  }
+  public function validaSalm(){
+  if($this->salm < 0){
+  $this->salm = 0.0;
+  }
+}
+  public function aumentasalm(){
+ 	$porc = ($this->salm*10)/100;
+ 	$this-> salm = $this->salm + $porc;
+  }
+}
+//empregado 1
+$emp1 = new Empregados();
+$emp1->validaSalmen();
+$emp1->setSala();
+echo "O salario anual de {$emp1-> getAnome()} {$emp1->getBnome()} é R$ {$emp1->getSala()}\n"; 
+$emp1 -> aumentasalm();
+$emp1->setSala();
+echo "O salario anual de {$emp1-> getAnome()} recebeu acrescimo de 10% e agora é de R$ {$emp1->getSala()} \n ";
+//empregado 2
+$emp2 = new Empregados();
+$emp2 -> setAnome("Jão");
+$emp2 -> setBnome("da Silveira");
+$emp2->setSalm(1000);
+$emp2->validaSalm();
+$emp2->setSala();
+echo "O salario anual de {$emp2-> getAnome()}  {$emp2->getBnome()} é R$ {$emp2->getSala()} \n"; 
+$emp2 -> aumentasalm ();
+$emp2->setSala();
+echo "O salario anual de {$emp2-> getAnome()} recebeu acrescimo de 10% e agora é de R$ {$emp2->getSala()} \n ";
+?>
